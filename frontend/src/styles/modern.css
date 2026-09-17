@@ -1,0 +1,164 @@
+﻿/* ==========================================================================
+   MINIMALIST & CLEAN MODERN PORTFOLIO (NO AI-SLOP, NO EXCESSIVE GLOWS)
+   ========================================================================== */
+
+:root {
+  --m-bg-dark: #0d0d11;
+  --m-bg-surface: #141419;
+  --m-bg-card: #18181f;
+  --m-bg-card-subtle: #121217;
+  
+  --m-border: #23232b;
+  --m-border-hover: #383844;
+  --m-border-accent: #facc15;
+  
+  --m-yellow: #facc15;
+  --m-yellow-hover: #eab308;
+  --m-yellow-muted: rgba(250, 204, 21, 0.12);
+  
+  --m-text-main: #f4f4f5;
+  --m-text-sub: #a1a1aa;
+  --m-text-muted: #71717a;
+  
+  --m-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.modern-theme {
+  font-family: var(--m-font);
+  background-color: var(--m-bg-dark);
+  color: var(--m-text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.modern-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Minimalist Clean Cards */
+.modern-card {
+  background: var(--m-bg-card);
+  border: 1px solid var(--m-border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.modern-card:hover {
+  border-color: var(--m-border-hover);
+  transform: translateY(-2px);
+}
+
+/* Clean, Restrained Buttons - ZERO NEON GLOW */
+.modern-btn-primary {
+  background: var(--m-yellow);
+  color: #09090b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.modern-btn-primary:hover {
+  background: var(--m-yellow-hover);
+  transform: translateY(-1px);
+}
+
+.modern-btn-outline {
+  background: transparent;
+  color: var(--m-text-main);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: 8px;
+  border: 1px solid var(--m-border);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+}
+
+.modern-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: #3f3f4e;
+  color: #fff;
+}
+
+.modern-btn-game {
+  background: #1c1c24;
+  color: var(--m-yellow);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.modern-btn-game:hover {
+  background: var(--m-yellow);
+  color: #09090b;
+  border-color: var(--m-yellow);
+  transform: translateY(-1px);
+}
+
+/* Minimalist Clean Badges */
+.modern-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--m-text-sub);
+  border: 1px solid var(--m-border);
+  letter-spacing: 0.02em;
+}
+
+.modern-badge-yellow {
+  background: rgba(250, 204, 21, 0.1);
+  color: var(--m-yellow);
+  border-color: rgba(250, 204, 21, 0.25);
+}
+
+/* Modern Section Headers */
+.modern-section-header {
+  margin-bottom: 3rem;
+}
+
+.modern-section-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-top: 0.5rem;
+}
+
+.modern-section-header p {
+  color: var(--m-text-sub);
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  max-width: 600px;
+}
+
+/* Yellow Highlight Text (CLEAN, NO GLOW) */
+.text-yellow {
+  color: var(--m-yellow);
+}
