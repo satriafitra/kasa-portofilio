@@ -1,6 +1,5 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { ContactMessage } from '../../types';
-import { Send, CheckCircle2 } from 'lucide-react';
 
 interface ModernContactProps {
   messages: ContactMessage[];
@@ -28,7 +27,7 @@ export const ModernContact: React.FC<ModernContactProps> = ({ messages, onSubmit
     });
 
     if (success) {
-      setSuccessStatus("Pesan Anda telah berhasil terkirim ke server!");
+      setSuccessStatus("Pesan Anda telah berhasil terkirim!");
       setSenderName('');
       setEmail('');
       setMessage('');
@@ -146,13 +145,9 @@ export const ModernContact: React.FC<ModernContactProps> = ({ messages, onSubmit
                     borderRadius: '6px',
                     color: '#22c55e',
                     fontSize: '0.825rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem'
                   }}
                 >
-                  <CheckCircle2 size={16} />
-                  <span>{successStatus}</span>
+                  {successStatus}
                 </div>
               )}
 
@@ -162,8 +157,7 @@ export const ModernContact: React.FC<ModernContactProps> = ({ messages, onSubmit
                 className="modern-btn-primary"
                 style={{ justifyContent: 'center', marginTop: '0.25rem' }}
               >
-                <Send size={15} />
-                <span>{isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}</span>
+                {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
               </button>
             </form>
           </div>
@@ -183,7 +177,7 @@ export const ModernContact: React.FC<ModernContactProps> = ({ messages, onSubmit
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '0.25rem' }}>
                   <span style={{ color: 'var(--m-text-muted)' }}>Lokasi</span>
-                  <span style={{ color: '#fff', fontWeight: 500 }}>Indonesia / Remote</span>
+                  <span style={{ color: '#fff', fontWeight: 500 }}>Cianjur, Indonesia (Remote)</span>
                 </div>
               </div>
             </div>

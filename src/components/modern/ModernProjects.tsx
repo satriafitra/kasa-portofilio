@@ -1,6 +1,5 @@
-﻿import React from 'react';
+import React from 'react';
 import { Project } from '../../types';
-import { ExternalLink, Code2 } from 'lucide-react';
 
 interface ModernProjectsProps {
   projects: Project[];
@@ -83,25 +82,25 @@ export const ModernProjects: React.FC<ModernProjectsProps> = ({ projects }) => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
+              {/* Action Buttons - Clean text buttons */}
               <div style={{ display: 'flex', gap: '0.65rem', borderTop: '1px solid var(--m-border)', paddingTop: '1rem' }}>
                 <a
                   href={proj.githubUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="modern-btn-outline"
-                  style={{ flex: 1, justifyContent: 'center', fontSize: '0.825rem', padding: '0.5rem' }}
+                  style={{ flex: 1, justifyContent: 'center', fontSize: '0.825rem', padding: '0.55rem' }}
                 >
-                  <Code2 size={15} /> GitHub
+                  GitHub ↗
                 </a>
                 <a
                   href={proj.liveUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="modern-btn-primary"
-                  style={{ flex: 1, justifyContent: 'center', fontSize: '0.825rem', padding: '0.5rem' }}
+                  style={{ flex: 1, justifyContent: 'center', fontSize: '0.825rem', padding: '0.55rem' }}
                 >
-                  <ExternalLink size={15} /> Demo
+                  Lihat Demo ↗
                 </a>
               </div>
             </div>

@@ -1,6 +1,5 @@
-﻿import React from 'react';
+import React from 'react';
 import { SystemStats } from '../../types';
-import { ChevronUp, Gamepad2 } from 'lucide-react';
 
 interface ModernFooterProps {
   stats: SystemStats | null;
@@ -45,10 +44,9 @@ export const ModernFooter: React.FC<ModernFooterProps> = ({ stats, onOpenArcade 
             <button
               onClick={onOpenArcade}
               className="modern-btn-game"
-              style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}
+              style={{ fontSize: '0.8rem', padding: '0.5rem 1.1rem' }}
             >
-              <Gamepad2 size={15} />
-              <span>Buka Game Flappy Dev</span>
+              <span>Flappy Dev</span>
             </button>
 
             <button
@@ -57,8 +55,7 @@ export const ModernFooter: React.FC<ModernFooterProps> = ({ stats, onOpenArcade 
               style={{ fontSize: '0.8rem', padding: '0.5rem 0.9rem' }}
               title="Kembali ke atas"
             >
-              <ChevronUp size={15} />
-              <span>Atas</span>
+              <span>Ke Atas &uarr;</span>
             </button>
           </div>
         </div>

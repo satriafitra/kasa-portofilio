@@ -1,5 +1,5 @@
-﻿import React, { useState, useEffect } from 'react';
-import { Gamepad2, Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 interface ModernNavbarProps {
   onOpenArcade: () => void;
@@ -91,15 +91,15 @@ export const ModernNavbar: React.FC<ModernNavbarProps> = ({ onOpenArcade }) => {
           ))}
         </nav>
 
-        {/* Right Action: Game Launch Button (Clean, Non-overwhelming) */}
+        {/* Right Action: Clean button without icon clutter */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <button
             onClick={onOpenArcade}
             className="modern-btn-game"
-            title="Buka Game Flappy Dev (Mode Pixel)"
+            style={{ padding: '0.45rem 1.1rem', fontSize: '0.85rem' }}
+            title="Buka Game Flappy Dev"
           >
-            <Gamepad2 size={16} />
-            <span>Arcade: Flappy Dev</span>
+            <span>Flappy Dev</span>
           </button>
 
           {/* Mobile Menu Toggle */}

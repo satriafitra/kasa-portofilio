@@ -1,12 +1,12 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    MINIMALIST & CLEAN MODERN PORTFOLIO (NO AI-SLOP, NO EXCESSIVE GLOWS)
    ========================================================================== */
 
 :root {
   --m-bg-dark: #0d0d11;
   --m-bg-surface: #141419;
-  --m-bg-card: #18181f;
-  --m-bg-card-subtle: #121217;
+  --m-bg-card: rgba(24, 24, 31, 0.85);
+  --m-bg-card-subtle: rgba(18, 18, 23, 0.85);
   
   --m-border: #23232b;
   --m-border-hover: #383844;
@@ -20,15 +20,17 @@
   --m-text-sub: #a1a1aa;
   --m-text-muted: #71717a;
   
-  --m-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --m-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .modern-theme {
   font-family: var(--m-font);
-  background-color: var(--m-bg-dark);
+  background-color: transparent;
   color: var(--m-text-main);
   min-height: 100vh;
   line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 .modern-container {
@@ -37,17 +39,21 @@
   padding: 0 1.5rem;
 }
 
-/* Minimalist Clean Cards */
+/* Minimalist Clean Cards with Frosted Depth */
 .modern-card {
   background: var(--m-bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--m-border);
   border-radius: 12px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .modern-card:hover {
   border-color: var(--m-border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 8px 26px -4px rgba(0, 0, 0, 0.5);
 }
 
 /* Clean, Restrained Buttons - ZERO NEON GLOW */

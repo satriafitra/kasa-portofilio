@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ModernNavbar } from './components/modern/ModernNavbar';
 import { ModernHero } from './components/modern/ModernHero';
 import { ModernAbout } from './components/modern/ModernAbout';
@@ -8,6 +8,7 @@ import { ModernExperience } from './components/modern/ModernExperience';
 import { ModernContact } from './components/modern/ModernContact';
 import { ModernFooter } from './components/modern/ModernFooter';
 import { ArcadeView } from './components/arcade/ArcadeView';
+import { GridDotBackground } from './components/modern/GridDotBackground';
 import {
   Profile,
   Skill,
@@ -29,7 +30,6 @@ import {
   submitContact
 } from './services/api';
 import { soundFx } from './services/sound';
-import { Gamepad2 } from 'lucide-react';
 
 export const App: React.FC = () => {
   // Navigation View State: 'portfolio' (Modern Landing Page) or 'arcade' (Dedicated Pixel Game Page)
@@ -127,83 +127,90 @@ export const App: React.FC = () => {
   // RENDER DEDICATED PIXEL ARCADE GAME VIEW
   if (currentView === 'arcade') {
     return (
-      <ArcadeView
-        onBackToPortfolio={() => navigateTo('portfolio')}
-        scores={leaderboard}
-        isLoadingScores={loadingScores}
-        onRefreshScores={handleRefreshLeaderboard}
-        onSaveScore={handleSaveScore}
-        highScore={highScore}
-      />
+      <>
+        <GridDotBackground />
+        <ArcadeView
+          onBackToPortfolio={() => navigateTo('portfolio')}
+          scores={leaderboard}
+          isLoadingScores={loadingScores}
+          onRefreshScores={handleRefreshLeaderboard}
+          onSaveScore={handleSaveScore}
+          highScore={highScore}
+        />
+      </>
     );
   }
 
   // RENDER SLEEK MODERN LANDING PAGE (SATRIA FITRA / KASAV)
   return (
-    <div className="modern-theme">
-      {/* Modern Navigation Header */}
-      <ModernNavbar onOpenArcade={() => navigateTo('arcade')} />
+    <>
+      {/* Animated Square Grid & Floating Moving Particles Canvas */}
+      <GridDotBackground />
 
-      {/* Hero Section */}
-      <ModernHero onOpenArcade={() => navigateTo('arcade')} />
+      <div className="modern-theme">
+        {/* Modern Navigation Header */}
+        <ModernNavbar onOpenArcade={() => navigateTo('arcade')} />
 
-      {/* About Section */}
-      <ModernAbout profile={profile} onOpenArcade={() => navigateTo('arcade')} />
+        {/* Hero Section */}
+        <ModernHero onOpenArcade={() => navigateTo('arcade')} />
 
-      {/* Skills Section */}
-      <ModernSkills skills={skills} />
+        {/* About Section */}
+        <ModernAbout profile={profile} onOpenArcade={() => navigateTo('arcade')} />
 
-      {/* Projects Section */}
-      <ModernProjects projects={projects} />
+        {/* Skills Section */}
+        <ModernSkills skills={skills} />
 
-      {/* Experience Timeline Section */}
-      <ModernExperience experiences={experiences} />
+        {/* Projects Section */}
+        <ModernProjects projects={projects} />
 
-      {/* Contact Section */}
-      <ModernContact messages={guestbook} onSubmitMessage={handleSendMessage} />
+        {/* Experience Timeline Section */}
+        <ModernExperience experiences={experiences} />
 
-      {/* Modern Footer */}
-      <ModernFooter stats={systemStats} onOpenArcade={() => navigateTo('arcade')} />
+        {/* Contact Section */}
+        <ModernContact messages={guestbook} onSubmitMessage={handleSendMessage} />
 
-      {/* Floating Action Button: Clean, Subtle, Minimalist */}
-      <button
-        onClick={() => {
-          soundFx.playClick();
-          navigateTo('arcade');
-        }}
-        style={{
-          position: 'fixed',
-          bottom: '1.5rem',
-          right: '1.5rem',
-          zIndex: 990,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          padding: '0.65rem 1.15rem',
-          borderRadius: '8px',
-          background: '#18181f',
-          color: 'var(--m-yellow)',
-          fontWeight: 600,
-          fontSize: '0.85rem',
-          border: '1px solid rgba(250, 204, 21, 0.3)',
-          cursor: 'pointer',
-          boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)',
-          transition: 'all 0.15s ease'
-        }}
-        className="clean-floating-game-btn"
-        title="Buka Game Flappy Dev (Mode Pixel)"
-      >
-        <Gamepad2 size={16} />
-        <span>Flappy Dev</span>
-      </button>
+        {/* Modern Footer */}
+        <ModernFooter stats={systemStats} onOpenArcade={() => navigateTo('arcade')} />
 
-      <style>{`
-        .clean-floating-game-btn:hover {
-          background: var(--m-yellow) !important;
-          color: #09090b !important;
-          transform: translateY(-2px);
-        }
-      `}</style>
-    </div>
+        {/* Floating Action Button: Clean, Subtle, Minimalist */}
+        <button
+          onClick={() => {
+            soundFx.playClick();
+            navigateTo('arcade');
+          }}
+          style={{
+            position: 'fixed',
+            bottom: '1.5rem',
+            right: '1.5rem',
+            zIndex: 990,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+            padding: '0.6rem 1.1rem',
+            borderRadius: '6px',
+            background: '#16161b',
+            color: 'var(--m-yellow)',
+            fontWeight: 600,
+            fontSize: '0.825rem',
+            border: '1px solid rgba(250, 204, 21, 0.25)',
+            cursor: 'pointer',
+            boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)',
+            transition: 'all 0.15s ease'
+          }}
+          className="clean-floating-game-btn"
+          title="Buka Game Flappy Dev (Mode Pixel)"
+        >
+          <span>Flappy Dev ↗</span>
+        </button>
+
+        <style>{`
+          .clean-floating-game-btn:hover {
+            background: var(--m-yellow) !important;
+            color: #09090b !important;
+            transform: translateY(-2px);
+          }
+        `}</style>
+      </div>
+    </>
   );
 };
